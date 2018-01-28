@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchViewController : UIViewController
+@class GMSPlace;
+
+@interface SearchViewController : UIViewController {
+
+  GMSPlace *searchedPlace;
+  
+  // Add a pair of UILabels in Interface Builder, and connect the outlets to these variables.
+  IBOutlet UILabel *nameLabel;
+  IBOutlet UILabel *addressLabel;
+  
+}
 
 @end

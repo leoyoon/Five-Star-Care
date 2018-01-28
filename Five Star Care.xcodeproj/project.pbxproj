@@ -39,6 +39,10 @@
 		B314A299201D5AB9008DBE4C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B314A298201D5AB9008DBE4C /* QuartzCore.framework */; };
 		B314A29B201D5AC4008DBE4C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B314A29A201D5AC4008DBE4C /* SystemConfiguration.framework */; };
 		B314A29D201D5AC9008DBE4C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B314A29C201D5AC9008DBE4C /* UIKit.framework */; };
+		B314A2A0201D7E89008DBE4C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B314A29F201D7E89008DBE4C /* MapViewController.m */; };
+		B314A2A3201E1EA4008DBE4C /* PractitionerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B314A2A2201E1EA4008DBE4C /* PractitionerViewController.m */; };
+		B314A2A6201E238A008DBE4C /* PractitionerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B314A2A5201E238A008DBE4C /* PractitionerTableViewController.m */; };
+		B314A2A9201E2CDB008DBE4C /* AppointmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B314A2A8201E2CDB008DBE4C /* AppointmentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +85,14 @@
 		B314A298201D5AB9008DBE4C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B314A29A201D5AC4008DBE4C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B314A29C201D5AC9008DBE4C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B314A29E201D7E89008DBE4C /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		B314A29F201D7E89008DBE4C /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		B314A2A1201E1EA4008DBE4C /* PractitionerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PractitionerViewController.h; sourceTree = "<group>"; };
+		B314A2A2201E1EA4008DBE4C /* PractitionerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PractitionerViewController.m; sourceTree = "<group>"; };
+		B314A2A4201E238A008DBE4C /* PractitionerTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PractitionerTableViewController.h; sourceTree = "<group>"; };
+		B314A2A5201E238A008DBE4C /* PractitionerTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PractitionerTableViewController.m; sourceTree = "<group>"; };
+		B314A2A7201E2CDB008DBE4C /* AppointmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppointmentViewController.h; sourceTree = "<group>"; };
+		B314A2A8201E2CDB008DBE4C /* AppointmentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppointmentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +164,14 @@
 				B314A26B201D56A6008DBE4C /* SearchViewController.m */,
 				B314A26D201D56AE008DBE4C /* ProfileViewController.h */,
 				B314A26E201D56AE008DBE4C /* ProfileViewController.m */,
+				B314A29E201D7E89008DBE4C /* MapViewController.h */,
+				B314A29F201D7E89008DBE4C /* MapViewController.m */,
+				B314A2A1201E1EA4008DBE4C /* PractitionerViewController.h */,
+				B314A2A2201E1EA4008DBE4C /* PractitionerViewController.m */,
+				B314A2A4201E238A008DBE4C /* PractitionerTableViewController.h */,
+				B314A2A5201E238A008DBE4C /* PractitionerTableViewController.m */,
+				B314A2A7201E2CDB008DBE4C /* AppointmentViewController.h */,
+				B314A2A8201E2CDB008DBE4C /* AppointmentViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -288,9 +308,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B314A2A3201E1EA4008DBE4C /* PractitionerViewController.m in Sources */,
+				B314A2A9201E2CDB008DBE4C /* AppointmentViewController.m in Sources */,
 				B314A269201D4FEA008DBE4C /* DashboardViewController.m in Sources */,
 				B314A255201D2FA8008DBE4C /* Five_Star_Care.xcdatamodeld in Sources */,
+				B314A2A6201E238A008DBE4C /* PractitionerTableViewController.m in Sources */,
 				B314A24F201D2FA8008DBE4C /* ViewController.m in Sources */,
+				B314A2A0201D7E89008DBE4C /* MapViewController.m in Sources */,
 				B314A25D201D2FA8008DBE4C /* main.m in Sources */,
 				B314A26F201D56AE008DBE4C /* ProfileViewController.m in Sources */,
 				B314A26C201D56A6008DBE4C /* SearchViewController.m in Sources */,

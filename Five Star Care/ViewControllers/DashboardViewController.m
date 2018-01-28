@@ -7,6 +7,7 @@
 //
 
 #import "DashboardViewController.h"
+#import "PractitionerViewController.h"
 
 @interface DashboardViewController (private)
 
@@ -25,6 +26,25 @@
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue.identifier isEqualToString:@"dashboardToPractitionerSegue1"]) {
+    PractitionerViewController *controller = (PractitionerViewController *)segue.destinationViewController;
+    controller.practitionerName = @"Dr. Avocado";
+  }
+  else if ([segue.identifier isEqualToString:@"dashboardToPractitionerSegue2"]) {
+    PractitionerViewController *controller = (PractitionerViewController *)segue.destinationViewController;
+    controller.practitionerName = @"Dr. Banana";
+  }
+  else if ([segue.identifier isEqualToString:@"dashboardToPractitionerSegue3"]) {
+    PractitionerViewController *controller = (PractitionerViewController *)segue.destinationViewController;
+    controller.practitionerName = @"Dr. Choco";
+  }
+  else if ([segue.identifier isEqualToString:@"dashboardToPractitionerSegue4"]) {
+    PractitionerViewController *controller = (PractitionerViewController *)segue.destinationViewController;
+    controller.practitionerName = @"Dr. Ramnarine";
+  }
 }
 
 #pragma mark - Private Methods

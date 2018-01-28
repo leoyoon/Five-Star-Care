@@ -6,32 +6,65 @@
 //  Copyright © 2018 FSC. All rights reserved.
 //
 
-#import "SearchViewController.h"
+@import GoogleMaps;
+@import GooglePlaces;
 
-@interface SearchViewController ()
+#import "SearchViewController.h"
+#import "MapViewController.h"
+
+@interface SearchViewController (private)
+
+- (void)getCurrentPlace;
 
 @end
 
-@implementation SearchViewController
+@implementation SearchViewController {
+  GMSPlacesClient *_placesClient;
+  CLLocationManager *_locationManager;
+}
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  [super viewDidLoad];
+  _placesClient = [GMSPlacesClient sharedClient];
+  _locationManager = [[CLLocationManager alloc] init];
+  [_locationManager requestWhenInUseAuthorization];
+
+  [self getCurrentPlace];
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+  if ([segue.identifier isEqualToString:@"searchToMapSegue"]) {
+    MapViewController *controller = (MapViewController *)segue.destinationViewController;
+    controller.searchedPlace = self->searchedPlace;
+  }
 }
-*/
+
+#pragma mark - Private Methods
+
+- (void)getCurrentPlace {
+  [_placesClient currentPlaceWithCallback:^(GMSPlaceLikelihoodList *placeLikelihoodList, NSError *error){
+    if (error != nil) {
+      NSLog(@"Pick Place error: %@", [error localizedDescription]);
+      return;
+    }
+    
+    self->nameLabel.text = @"No current place";
+    self->addressLabel.text = @"";
+    
+    if (placeLikelihoodList != nil) {
+      self->searchedPlace = [[[placeLikelihoodList likelihoods] firstObject] place];
+      if (self->searchedPlace != nil) {
+        self->nameLabel.text = self->searchedPlace.name;
+        self->addressLabel.text = [[self->searchedPlace.formattedAddress componentsSeparatedByString:@", "]
+                                  componentsJoinedByString:@"\n"];
+      }
+    }
+  }];
+}
 
 @end
